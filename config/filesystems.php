@@ -55,6 +55,34 @@ return [
             'visibility' => 'public',
         ],
 
+        'drivers/avatars' => [
+            'driver' => 'local',
+            'root' => public_path('assets/images/drivers/avatars'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
+        'drivers/cards' => [
+            'driver' => 'local',
+            'root' => public_path('assets/images/drivers/cards'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
+        'drivers/cars' => [
+            'driver' => 'local',
+            'root' => public_path('assets/images/drivers/cars'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
+        'drivers/transports' => [
+            'driver' => 'local',
+            'root' => public_path('assets/images/drivers/transports'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

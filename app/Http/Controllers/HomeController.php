@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Driver;
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -28,6 +30,9 @@ class HomeController extends Controller
 
     public function adminView()
     {
-        return view('dashboard');
+        $allUsersTotal = User::count();
+        $adminsTotal = User::where('role', 'admin')->count();
+        $driversTotal = Driver::count();
+        return view('dashboard', compact('allUsersTotal', 'adminsTotal', 'driversTotal'));
     }
 }

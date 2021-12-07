@@ -22,5 +22,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['checkIsAdmin']], function () {
-    Route::get('/dashboard', 'HomeController@adminView')->name('admin.dashboard');
+    Route::get('/', 'HomeController@adminView')->name('admin.dashboard');
+
+    Route::group(['namespace' => 'Dashboard'], function () {
+        Route::resource('drivers', 'DriversController');
+    });
 });

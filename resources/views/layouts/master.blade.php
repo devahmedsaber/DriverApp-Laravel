@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from colorlib.com/polygon/admindek/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 16:07:52 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
 
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title')</title>
 
-
-    <!--[if lt IE 10]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.{{url('/')}}/public/assets/js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
     <link rel="icon" href="https://colorlib.com/polygon/admindek/files/assets/images/favicon.ico" type="image/x-icon">
 
@@ -54,16 +46,6 @@
 
     @yield('css')
 
-    <script>
-        $(function () {
-            $(".datepicker").datepicker({
-                dateFormat: "yy-mm-dd"
-            });
-        });
-    </script>
-
-    <script src="{{url('/')}}/public/vendor/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
-
 </head>
 
 <body>
@@ -79,8 +61,8 @@
         <nav class="navbar header-navbar pcoded-header">
             <div class="navbar-wrapper">
                 <div class="navbar-logo">
-                    <a href="index.html">
-                        <img class="img-fluid" src="{{url('/')}}/public/assets/png/logo.png" alt="Theme-Logo" />
+                    <a href="{{ route('admin.dashboard') }}">
+                        <h3 class="text-capitalize">DriverApp</h3>
                     </a>
                     <a class="mobile-menu" id="mobile-collapse" href="#!">
                         <i class="feather icon-menu icon-toggle-right"></i>
@@ -113,93 +95,20 @@
                         </li>
                     </ul>
                     <ul class="nav-right">
-                        <li class="header-notification">
-                            <div class="dropdown-primary dropdown">
-                                <div class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="feather icon-bell"></i>
-                                    <span class="badge bg-c-red">5</span>
-                                </div>
-                                <ul class="show-notification notification-view dropdown-menu"
-                                    data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                                    <li>
-                                        <h6>Notifications</h6>
-                                        <label class="label label-danger">New</label>
-                                    </li>
-                                    <li>
-                                        <div class="media">
-                                            <img class="img-radius" src="{{url('/')}}/public/assets/jpg/avatar-4.jpg"
-                                                 alt="Generic placeholder image">
-                                            <div class="media-body">
-                                                <h5 class="notification-user">John Doe</h5>
-                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
-                                                    elit.</p>
-                                                <span class="notification-time">30 minutes ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media">
-                                            <img class="img-radius" src="{{url('/')}}/public/assets/jpg/avatar-3.jpg"
-                                                 alt="Generic placeholder image">
-                                            <div class="media-body">
-                                                <h5 class="notification-user">Joseph William</h5>
-                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
-                                                    elit.</p>
-                                                <span class="notification-time">30 minutes ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media">
-                                            <img class="img-radius" src="{{url('/')}}/public/assets/jpg/avatar-4.jpg"
-                                                 alt="Generic placeholder image">
-                                            <div class="media-body">
-                                                <h5 class="notification-user">Sara Soudein</h5>
-                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
-                                                    elit.</p>
-                                                <span class="notification-time">30 minutes ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="header-notification">
-                            <div class="dropdown-primary dropdown">
-                                <div class="displayChatbox dropdown-toggle" data-toggle="dropdown">
-                                    <i class="feather icon-message-square"></i>
-                                    <span class="badge bg-c-green">3</span>
-                                </div>
-                            </div>
-                        </li>
                         <li class="user-profile header-notification">
                             <div class="dropdown-primary dropdown">
                                 <div class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="{{url('/')}}/public/assets/jpg/avatar-3.jpg" class="img-radius"
+                                    <img src="{{url('/')}}/public/assets/logos/profile.png" class="img-radius"
                                          alt="User-Profile-Image">
-                                    <span>{{ auth()->user()->name }}</span>
+                                    <span class="font-weight-bold"
+                                          style="font-size: 15px">{{ auth()->user()->name }}</span>
                                     <i class="feather icon-chevron-down"></i>
                                 </div>
                                 <ul class="show-notification profile-notification dropdown-menu"
                                     data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                                     <li>
-                                        <a href="#!">
-                                            <i class="feather icon-settings"></i> Settings
-                                        </a>
-                                    </li>
-                                    <li>
                                         <a href="#">
                                             <i class="feather icon-user"></i> Profile
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="email-inbox.html">
-                                            <i class="feather icon-mail"></i> My Messages
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="auth-lock-screen.html">
-                                            <i class="feather icon-lock"></i> Lock Screen
                                         </a>
                                     </li>
                                     <li>
@@ -220,144 +129,6 @@
             </div>
         </nav>
 
-        <div id="sidebar" class="users p-chat-user showChat">
-            <div class="had-container">
-                <div class="p-fixed users-main">
-                    <div class="user-box">
-                        <div class="chat-search-box">
-                            <a class="back_friendlist">
-                                <i class="feather icon-x"></i>
-                            </a>
-                            <div class="right-icon-control">
-                                <div class="input-group input-group-button">
-                                    <input type="text" id="search-friends" name="footer-email" class="form-control"
-                                           placeholder="Search Friend">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary waves-effect waves-light" type="button"><i
-                                                class="feather icon-search"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="main-friend-list">
-                            <div class="media userlist-box waves-effect waves-light" data-id="1"
-                                 data-status="online" data-username="Josephin Doe">
-                                <a class="media-left" href="#!">
-                                    <img class="media-object img-radius img-radius"
-                                         src="{{url('/')}}/public/assets/jpg/avatar-3.jpg" alt="Generic placeholder image ">
-                                    <div class="live-status bg-success"></div>
-                                </a>
-                                <div class="media-body">
-                                    <div class="chat-header">Josephin Doe</div>
-                                </div>
-                            </div>
-                            <div class="media userlist-box waves-effect waves-light" data-id="2"
-                                 data-status="online" data-username="Lary Doe">
-                                <a class="media-left" href="#!">
-                                    <img class="media-object img-radius" src="{{url('/')}}/public/assets/jpg/avatar-2.jpg"
-                                         alt="Generic placeholder image">
-                                    <div class="live-status bg-success"></div>
-                                </a>
-                                <div class="media-body">
-                                    <div class="f-13 chat-header">Lary Doe</div>
-                                </div>
-                            </div>
-                            <div class="media userlist-box waves-effect waves-light" data-id="3"
-                                 data-status="online" data-username="Alice">
-                                <a class="media-left" href="#!">
-                                    <img class="media-object img-radius" src="{{url('/')}}/public/assets/jpg/avatar-4.jpg"
-                                         alt="Generic placeholder image">
-                                    <div class="live-status bg-success"></div>
-                                </a>
-                                <div class="media-body">
-                                    <div class="f-13 chat-header">Alice</div>
-                                </div>
-                            </div>
-                            <div class="media userlist-box waves-effect waves-light" data-id="4"
-                                 data-status="offline" data-username="Alia">
-                                <a class="media-left" href="#!">
-                                    <img class="media-object img-radius" src="{{url('/')}}/public/assets/jpg/avatar-3.jpg"
-                                         alt="Generic placeholder image">
-                                    <div class="live-status bg-default"></div>
-                                </a>
-                                <div class="media-body">
-                                    <div class="f-13 chat-header">Alia<small class="d-block text-muted">10 min
-                                            ago</small></div>
-                                </div>
-                            </div>
-                            <div class="media userlist-box waves-effect waves-light" data-id="5"
-                                 data-status="offline" data-username="Suzen">
-                                <a class="media-left" href="#!">
-                                    <img class="media-object img-radius" src="{{url('/')}}/public/assets/jpg/avatar-2.jpg"
-                                         alt="Generic placeholder image">
-                                    <div class="live-status bg-default"></div>
-                                </a>
-                                <div class="media-body">
-                                    <div class="f-13 chat-header">Suzen<small class="d-block text-muted">15 min
-                                            ago</small></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="showChat_inner">
-            <div class="media chat-inner-header">
-                <a class="back_chatBox">
-                    <i class="feather icon-x"></i> Josephin Doe
-                </a>
-            </div>
-            <div class="main-friend-chat">
-                <div class="media chat-messages">
-                    <a class="media-left photo-table" href="#!">
-                        <img class="media-object img-radius img-radius m-t-5" src="{{url('/')}}/public/assets/jpg/avatar-2.jpg"
-                             alt="Generic placeholder image">
-                    </a>
-                    <div class="media-body chat-menu-content">
-                        <div class="">
-                            <p class="chat-cont">I'm just looking around. Will you tell me something about yourself?
-                            </p>
-                        </div>
-                        <p class="chat-time">8:20 a.m.</p>
-                    </div>
-                </div>
-                <div class="media chat-messages">
-                    <div class="media-body chat-menu-reply">
-                        <div class="">
-                            <p class="chat-cont">Ohh! very nice</p>
-                        </div>
-                        <p class="chat-time">8:22 a.m.</p>
-                    </div>
-                </div>
-                <div class="media chat-messages">
-                    <a class="media-left photo-table" href="#!">
-                        <img class="media-object img-radius img-radius m-t-5" src="{{url('/')}}/public/assets/jpg/avatar-2.jpg"
-                             alt="Generic placeholder image">
-                    </a>
-                    <div class="media-body chat-menu-content">
-                        <div class="">
-                            <p class="chat-cont">can you come with me?</p>
-                        </div>
-                        <p class="chat-time">8:20 a.m.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="chat-reply-box">
-                <div class="right-icon-control">
-                    <div class="input-group input-group-button">
-                        <input type="text" class="form-control" placeholder="Write hear . . ">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary waves-effect waves-light" type="button"><i
-                                    class="feather icon-message-circle"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="pcoded-main-container">
             <div class="pcoded-wrapper">
 
@@ -365,9 +136,9 @@
                     <div class="nav-list">
                         <div class="pcoded-inner-navbar main-menu">
 
-                            <div class="pcoded-navigation-label">CRM System</div>
+                            <div class="pcoded-navigation-label">DriverApp System</div>
                             <ul class="pcoded-item pcoded-left-item">
-                                <li class="{{Request::segment(1) == 'dashboard' ? 'active' : ''}}">
+                                <li class="{{Request::segment(1) == null ? 'active' : ''}}">
                                     <a href="{{ route('admin.dashboard') }}" class="waves-effect waves-dark">
                                             <span class="pcoded-micon">
                                                 <i class="feather icon-home"></i>
@@ -379,89 +150,29 @@
 
                             <div class="pcoded-navigation-label">Content Management</div>
                             <ul class="pcoded-item pcoded-left-item">
-                                <li class="{{Request::segment(1) == 'customers' ? 'active' : ''}}">
-                                    <a href="#" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="feather icon-sidebar"></i></span>
-                                        <span class="pcoded-mtext">Customers</span>
+                                <li class="{{Request::segment(1) == 'drivers' ? 'active' : ''}}">
+                                    <a href="{{ route('drivers.index') }}" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="fa fa-list-ol"></i></span>
+                                        <span class="pcoded-mtext">Drivers</span>
                                     </a>
                                 </li>
-                                <li class="{{Request::segment(1) == 'accounts' ? 'active' : ''}}">
-                                    <a href="#" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="feather icon-edit-1"></i></span>
-                                        <span class="pcoded-mtext">Accounts</span>
-                                    </a>
-                                </li>
-                                <li class="{{Request::segment(1) == 'vouchers' ? 'active' : ''}}">
-                                    <a href="#" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="feather icon-shield"></i></span>
-                                        <span class="pcoded-mtext">Vouchers</span>
-                                    </a>
-                                </li>
-                                <li class="pcoded-hasmenu">
-                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="feather icon-clipboard"></i></span>
-                                        <span class="pcoded-mtext">Reports</span>
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class="">
-                                            <a href="#" class="waves-effect waves-dark">
-                                                <span class="pcoded-mtext">Create Account Report</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="{{Request::segment(1) == 'categories' ? 'active' : ''}}">
-                                    <a href="#" class="waves-effect waves-dark">
+
+                                <div class="pcoded-navigation-label">Management</div>
+                                <ul class="pcoded-item pcoded-left-item">
+                                    <li class="">
+                                        <a href="{{ route('logout') }}" class="waves-effect waves-dark" onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
                                             <span class="pcoded-micon">
-                                                <i class="fa fa-wrench"></i>
+                                                <i class="feather icon-log-out"></i>
                                             </span>
-                                        <span class="pcoded-mtext">Categories</span>
-                                    </a>
-                                </li>
-                                <li class="{{Request::segment(1) == 'currencies' ? 'active' : ''}}">
-                                    <a href="#" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon">
-                                                <i class="fa fa-cog"></i>
-                                            </span>
-                                        <span class="pcoded-mtext">Currencies</span>
-                                    </a>
-                                </li>
-                                <li class="{{Request::segment(1) == 'reservations' ? 'active' : ''}}">
-                                    <a href="#" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon">
-                                                <i class="fa fa-flag"></i>
-                                            </span>
-                                        <span class="pcoded-mtext">Reservations</span>
-                                    </a>
-                                </li>
-                                <li class="pcoded-hasmenu">
-                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="feather icon-menu"></i></span>
-                                        <span class="pcoded-mtext">Accounting & Billing</span>
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class="">
-                                            <a href="#" class="waves-effect waves-dark">
-                                                <span class="pcoded-mtext">Revenues</span>
-                                            </a>
-                                        </li>
-                                        <li class="">
-                                            <a href="#" class="waves-effect waves-dark">
-                                                <span class="pcoded-mtext">Expenses</span>
-                                            </a>
-                                        </li>
-                                        <li class="">
-                                            <a href="#" class="waves-effect waves-dark">
-                                                <span class="pcoded-mtext">Billing</span>
-                                            </a>
-                                        </li>
-                                        <li class="">
-                                            <a href="#" class="waves-effect waves-dark">
-                                                <span class="pcoded-mtext">Cash</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                            <span class="pcoded-mtext">Logout</span>
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                              style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </li>
+                                </ul>
                             </ul>
                         </div>
                     </div>
@@ -530,7 +241,6 @@
 </div>
 
 
-
 <script data-cfasync="false" src="{{url('/')}}/public/assets/js/email-decode.min.js"></script>
 
 <script type="1dc21dc544476ddffbc54af6-text/javascript" src="{{url('/')}}/public/assets/js/jquery.min.js"></script>
@@ -541,36 +251,49 @@
 <script src="{{url('/')}}/public/assets/js/waves.min.js" type="1dc21dc544476ddffbc54af6-text/javascript"></script>
 
 
-<script type="1dc21dc544476ddffbc54af6-text/javascript" src="{{url('/')}}/public/assets/js/jquery.slimscroll.js"></script>
+<script type="1dc21dc544476ddffbc54af6-text/javascript"
+        src="{{url('/')}}/public/assets/js/jquery.slimscroll.js"></script>
 
 <script type="1dc21dc544476ddffbc54af6-text/javascript" src="{{url('/')}}/public/assets/js/modernizr.js"></script>
 <script type="1dc21dc544476ddffbc54af6-text/javascript" src="{{url('/')}}/public/assets/js/css-scrollbars.js"></script>
 
 <script src="{{url('/')}}/public/assets/js/waves.min.js" type="1dc21dc544476ddffbc54af6-text/javascript"></script>
 
-<script src="{{url('/')}}/public/assets/js/jquery.datatables.min.js" type="1dc21dc544476ddffbc54af6-text/javascript"></script>
+<script src="{{url('/')}}/public/assets/js/jquery.datatables.min.js"
+        type="1dc21dc544476ddffbc54af6-text/javascript"></script>
 
-<script src="{{url('/')}}/public/assets/js/datatables.buttons.min.js" type="1dc21dc544476ddffbc54af6-text/javascript"></script>
+<script src="{{url('/')}}/public/assets/js/datatables.buttons.min.js"
+        type="1dc21dc544476ddffbc54af6-text/javascript"></script>
 
 <script src="{{url('/')}}/public/assets/js/jszip.min.js" type="1dc21dc544476ddffbc54af6-text/javascript"></script>
 <script src="{{url('/')}}/public/assets/js/pdfmake.min.js" type="1dc21dc544476ddffbc54af6-text/javascript"></script>
 <script src="{{url('/')}}/public/assets/js/vfs_fonts.js" type="1dc21dc544476ddffbc54af6-text/javascript"></script>
-<script src="{{url('/')}}/public/assets/js/buttons.print.min.js" type="1dc21dc544476ddffbc54af6-text/javascript"></script>
-<script src="{{url('/')}}/public/assets/js/buttons.html5.min.js" type="1dc21dc544476ddffbc54af6-text/javascript"></script>
-<script src="{{url('/')}}/public/assets/js/datatables.bootstrap4.min.js" type="1dc21dc544476ddffbc54af6-text/javascript"></script>
-<script src="{{url('/')}}/public/assets/js/datatables.responsive.min.js" type="1dc21dc544476ddffbc54af6-text/javascript"></script>
-<script src="{{url('/')}}/public/assets/js/responsive.bootstrap4.min.js" type="1dc21dc544476ddffbc54af6-text/javascript"></script>
+<script src="{{url('/')}}/public/assets/js/buttons.print.min.js"
+        type="1dc21dc544476ddffbc54af6-text/javascript"></script>
+<script src="{{url('/')}}/public/assets/js/buttons.html5.min.js"
+        type="1dc21dc544476ddffbc54af6-text/javascript"></script>
+<script src="{{url('/')}}/public/assets/js/datatables.bootstrap4.min.js"
+        type="1dc21dc544476ddffbc54af6-text/javascript"></script>
+<script src="{{url('/')}}/public/assets/js/datatables.responsive.min.js"
+        type="1dc21dc544476ddffbc54af6-text/javascript"></script>
+<script src="{{url('/')}}/public/assets/js/responsive.bootstrap4.min.js"
+        type="1dc21dc544476ddffbc54af6-text/javascript"></script>
 
-<script src="{{url('/')}}/public/assets/js/data-table-custom.js" type="1dc21dc544476ddffbc54af6-text/javascript"></script>
+<script src="{{url('/')}}/public/assets/js/data-table-custom.js"
+        type="1dc21dc544476ddffbc54af6-text/javascript"></script>
 <script src="{{url('/')}}/public/assets/js/pcoded.min.js" type="1dc21dc544476ddffbc54af6-text/javascript"></script>
-<script src="{{url('/')}}/public/assets/js/vertical-layout.min.js" type="1dc21dc544476ddffbc54af6-text/javascript"></script>
-<script src="{{url('/')}}/public/assets/js/jquery.mcustomscrollbar.concat.min.js" type="1dc21dc544476ddffbc54af6-text/javascript"></script>
+<script src="{{url('/')}}/public/assets/js/vertical-layout.min.js"
+        type="1dc21dc544476ddffbc54af6-text/javascript"></script>
+<script src="{{url('/')}}/public/assets/js/jquery.mcustomscrollbar.concat.min.js"
+        type="1dc21dc544476ddffbc54af6-text/javascript"></script>
 <script type="1dc21dc544476ddffbc54af6-text/javascript" src="{{url('/')}}/public/assets/js/script.js"></script>
 
 <script src="{{url('/')}}/public/assets/js/jquery.flot.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
-<script src="{{url('/')}}/public/assets/js/jquery.flot.categories.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+<script src="{{url('/')}}/public/assets/js/jquery.flot.categories.js"
+        type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
 <script src="{{url('/')}}/public/assets/js/curvedlines.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
-<script src="{{url('/')}}/public/assets/js/jquery.flot.tooltip.min.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+<script src="{{url('/')}}/public/assets/js/jquery.flot.tooltip.min.js"
+        type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
 
 <script type="6a728206c8ede063a939d6d6-text/javascript" src="{{url('/')}}/public/assets/js/jquery.wavify.js"></script>
 <script type="6a728206c8ede063a939d6d6-text/javascript" src="{{url('/')}}/public/assets/js/tweenmax.min.js"></script>
@@ -581,11 +304,15 @@
 <script src="{{url('/')}}/public/assets/js/serial.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
 <script src="{{url('/')}}/public/assets/js/light.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
 
-<script type="6a728206c8ede063a939d6d6-text/javascript" src="{{url('/')}}/public/assets/js/owl.carousel.min.js"></script>
+<script type="6a728206c8ede063a939d6d6-text/javascript"
+        src="{{url('/')}}/public/assets/js/owl.carousel.min.js"></script>
 <script src="{{url('/')}}/public/assets/js/pcoded.min.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
-<script src="{{url('/')}}/public/assets/js/vertical-layout.min.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
-<script type="6a728206c8ede063a939d6d6-text/javascript" src="{{url('/')}}/public/assets/js/widget-statistic.js"></script>
-<script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="{{url('/')}}/public/assets/js/custom-dashboard.min.js"></script>
+<script src="{{url('/')}}/public/assets/js/vertical-layout.min.js"
+        type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+<script type="6a728206c8ede063a939d6d6-text/javascript"
+        src="{{url('/')}}/public/assets/js/widget-statistic.js"></script>
+<script type="d2d1d6e2f87cbebdf4013b26-text/javascript"
+        src="{{url('/')}}/public/assets/js/custom-dashboard.min.js"></script>
 <script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="{{url('/')}}/public/assets/js/script.min.js"></script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
@@ -597,14 +324,14 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-23581568-13');
+
 </script>
 
-<script src="{{url('/')}}/public/assets/js/rocket-loader.min.js" data-cf-settings="1dc21dc544476ddffbc54af6-|49" defer=""></script>
+<script src="{{url('/')}}/public/assets/js/rocket-loader.min.js" data-cf-settings="1dc21dc544476ddffbc54af6-|49"
+        defer=""></script>
 
 @yield('scripts')
 
 </body>
-
-<!-- Mirrored from colorlib.com/polygon/admindek/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 16:08:25 GMT -->
 
 </html>

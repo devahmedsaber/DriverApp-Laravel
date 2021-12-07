@@ -10,7 +10,6 @@
             <i class="feather icon-home bg-c-blue"></i>
             <div class="d-inline">
                 <h5>Dashboard</h5>
-                <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
             </div>
         </div>
     </div>
@@ -33,41 +32,58 @@
 
     <div class="row">
 
-        <div class="col-xl-12">
-            <div class="card proj-progress-card">
-                <div class="card-block">
-                    <div class="row">
-                        <div class="col-xl-3 col-md-6">
-                            <h6>Published Project</h6>
-                            <h5 class="m-b-30 f-w-700">532<span class="text-c-green m-l-10">+1.69%</span></h5>
-                            <div class="progress">
-                                <div class="progress-bar bg-c-red" style="width:25%"></div>
+        <div class="col-xl-3 col-md-6">
+            <a href="#">
+                <div class="card prod-p-card card-red">
+                    <div style="padding-bottom: 8px" class="card-body">
+                        <div style="margin-bottom: 10px" class="row align-items-center m-b-30">
+                            <div class="col arabic">
+                                <h6 class="m-b-5 text-white">All Users</h6>
+                                <h5 class="m-b-0 f-w-700 text-white">Total : {{ $allUsersTotal }}</h5>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <h6>Completed Task</h6>
-                            <h5 class="m-b-30 f-w-700">4,569<span class="text-c-red m-l-10">-0.5%</span></h5>
-                            <div class="progress">
-                                <div class="progress-bar bg-c-blue" style="width:65%"></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <h6>Successfull Task</h6>
-                            <h5 class="m-b-30 f-w-700">89%<span class="text-c-green m-l-10">+0.99%</span></h5>
-                            <div class="progress">
-                                <div class="progress-bar bg-c-green" style="width:85%"></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <h6>Ongoing Project</h6>
-                            <h5 class="m-b-30 f-w-700">365<span class="text-c-green m-l-10">+0.35%</span></h5>
-                            <div class="progress">
-                                <div class="progress-bar bg-c-yellow" style="width:45%"></div>
+                            <div class="col-auto">
+                                <i class="fa fa-users text-c-red f-18"></i>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+            <a href="#">
+                <div class="card prod-p-card card-blue">
+                    <div style="padding-bottom: 8px" class="card-body">
+                        <div style="margin-bottom: 10px" class="row align-items-center m-b-30">
+                            <div class="col arabic">
+                                <h6 class="m-b-5 text-white">Admins</h6>
+                                <h5 class="m-b-0 f-w-700 text-white">Total : {{ $adminsTotal }}</h5>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fa fa-users text-c-blue f-18"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+            <a href="{{ route('drivers.index') }}">
+                <div class="card prod-p-card card-yellow">
+                    <div style="padding-bottom: 8px" class="card-body">
+                        <div style="margin-bottom: 10px" class="row align-items-center m-b-30">
+                            <div class="col arabic">
+                                <h6 class="m-b-5 text-white">Drivers</h6>
+                                <h5 class="m-b-0 f-w-700 text-white">Total : {{ $driversTotal }}</h5>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fa fa-users text-c-yellow f-18"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
         </div>
 
     </div>

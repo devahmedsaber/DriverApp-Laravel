@@ -16,10 +16,10 @@ class CheckIsAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user() && Auth::user()->is_admin == 1){
+        if (Auth::user() && Auth::user()->role == 'admin'){
             return $next($request);
         }
 
-        return redirect('home')->with('error', 'You have not admin access.');
+        return redirect('home')->with('error', 'You Have Not Admin Access.');
     }
 }
